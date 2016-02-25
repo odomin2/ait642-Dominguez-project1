@@ -26,12 +26,38 @@ public class Ntl_Fire_Dng_R_Idx {
 		
 		askforInput("snow");//asks for amount from the user. 
 		
-		int storedValue = storeInput(); //Stores the value entered by the user. 
+		int storedValue = storeInput(); //Stores the value entered by the user.
 		
-		double result = Calculate(storedValue); //Calculates the stored Value entered by user.  
+		System.out.println("--------------------------------------------------");
 		
-		double whereToGo = lineDecision(result);//makes decision line of code to execute.  
+		double result = Calculate(storedValue); //Calculates the stored Value entered by user.
 		
+		System.out.println("--------------------------------------------------");
+		
+		double whereToGo = lineDecision(result);//makes decision line of code to execute.
+		
+		System.out.println("--------------------------------------------------");
+		
+		double fineFuel = fuelMoisture();//Calls fuelMoisture for fine fuel calculation.
+		
+		System.out.println("--------------------------------------------------");
+		
+		double drying = dryingFactor(); //Calls dryingFactor for fine calculation.
+		
+		System.out.println("--------------------------------------------------");
+		
+		double herb = fuelHerbStage (); //Calls fuelHerbStage for calculations. 
+		
+		System.out.println("--------------------------------------------------");
+		
+		double rainResult = rainCheck (result); //checks for rain
+		double d, j, increaseBUI;
+		d = drying;
+		j = rainResult; 
+		increaseBUI = d + j;
+		
+		System.out.println("THis is the result for the increased BUI " + increaseBUI);
+		System.out.println("--------------------------------------------------");
 
 	}//End of main method 
 	
@@ -196,5 +222,51 @@ public class Ntl_Fire_Dng_R_Idx {
 		return rain;
 		
 	}//End of BUO method
+	
+	/**
+	 * Calculate Fine fuel moisture.			(1)
+	 * <p>
+	 * Method will generate random number 		(2)
+	 * to represent the calculation of
+	 * the fine fuel moisture. 
+	 * <p>
+	 * @return A random number that represents fuel moisture 
+	 */
+	public static double fuelMoisture(){
+		double moisture = buoCalculation();
+		System.out.println("This is the fuel moisture calcualtion. " + moisture);
+		return moisture; 
+	}//End of fuel moisture method.
+	
+	/**
+	 * Calculate Fine fuel moisture.			(1)
+	 * <p>
+	 * Method will generate random number 		(2)
+	 * to represent the calculation of
+	 * the fine fuel moisture. 
+	 * <p>
+	 * @return A random number that represents fuel moisture 
+	 */
+	public static double dryingFactor(){
+		double factor = buoCalculation();
+		System.out.println("This is the drying fuel calcualtion. " + factor);
+		return factor; 
+	}//End of drying factor method.  
+	
+	/**
+	 * Calculate Fine fuel moisture.			(1)
+	 * <p>
+	 * Method will generate random number 		(2)
+	 * to represent the calculation of
+	 * the fine fuel and herb stage. 
+	 * <p>
+	 * @return A random number that represents the calculation 
+	 */
+	public static double fuelHerbStage (){
+		double stage = buoCalculation();
+		System.out.println("This is the fuel and herb stage calcualtion. " + stage);
+		return stage; 
+	}//End of fine fuel for herb stage method.  
+	
 
 }
